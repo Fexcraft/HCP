@@ -3,13 +3,9 @@ package net.fexcraft.mod.addon.hcp.models.parts;
 
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
-import net.fexcraft.mod.fvtm.data.root.Colorable;
-import net.fexcraft.mod.fvtm.data.root.RenderCache;
-import net.fexcraft.mod.fvtm.data.vehicle.VehicleData;
 import net.fexcraft.mod.fvtm.model.DefaultPrograms;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 import net.fexcraft.mod.fvtm.model.PartModel;
-import net.fexcraft.mod.fvtm.model.TurboList;
-import net.minecraft.entity.Entity;
 
 /** This file was exported via the FVTM Exporter V1.4 of<br>
  *  FMT (Fex's Modelling Toolbox) v.2.0.5 &copy; 2020 - Fexcraft.net<br>
@@ -22,7 +18,7 @@ public class LCCCabin extends PartModel {
 		super(); textureX = 1024; textureY = 1024;
 		this.addToCreators("Ferdinand (FEX___96)");
 		//
-		TurboList cart_wheels = new TurboList("cart_wheels");
+		ModelGroup cart_wheels = new ModelGroup("cart_wheels");
 		cart_wheels.add(new ModelRendererTurbo(cart_wheels, 355, 100, textureX, textureY).addCylinder(0, 0, 0, 2, 3, 12, 1, 1, 3, null)
 			.setRotationPoint(82, -159.8f, -21).setRotationAngle(0, 0, 0)
 		);
@@ -74,7 +70,7 @@ public class LCCCabin extends PartModel {
 		cart_wheels.addProgram("//TODO");
 		this.groups.add(cart_wheels);
 		//
-		TurboList cart_chassis = new TurboList("cart_chassis");
+		ModelGroup cart_chassis = new ModelGroup("cart_chassis");
 		cart_chassis.add(new ModelRendererTurbo(cart_chassis, 627, 163, textureX, textureY).addBox(0.5f, 0, 0, 2, 2, 2)
 			.setRotationPoint(41, -161, -22).setRotationAngle(0, 0, 0)
 		);
@@ -356,7 +352,7 @@ public class LCCCabin extends PartModel {
 		cart_chassis.addProgram(DefaultPrograms.RGB_SECONDARY);
 		this.groups.add(cart_chassis);
 		//
-		TurboList cart_windows = new TurboList("cart_windows");
+		ModelGroup cart_windows = new ModelGroup("cart_windows");
 		cart_windows.add(new ModelRendererTurbo(cart_windows, 633, 21, textureX, textureY).addBox(0.5f, 0, 0, 69, 1, 46)
 			.setRotationPoint(-35, -153, -23).setRotationAngle(0, 0, 0)
 		);
@@ -399,7 +395,7 @@ public class LCCCabin extends PartModel {
 		cart_windows.addProgram(new DefaultPrograms.Window(0xbbeded));
 		//this.groups.add(cart_windows);
 		//
-		TurboList inner_controls = new TurboList("inner_controls");
+		ModelGroup inner_controls = new ModelGroup("inner_controls");
 		inner_controls.add(new ModelRendererTurbo(inner_controls, 554, 97, textureX, textureY).addBox(-1, -4, 0, 1, 4, 1)
 			.setRotationPoint(20, -167, 4).setRotationAngle(0, 0, 0)
 		);
@@ -418,18 +414,18 @@ public class LCCCabin extends PartModel {
 		inner_controls.add(new ModelRendererTurbo(inner_controls, 1016, 72, textureX, textureY).addBox(0, 0, 0, 1, 2, 2)
 			.setRotationPoint(19, -168, -16).setRotationAngle(0, 0, 37)
 		);
-		inner_controls.addProgram(new TurboList.Program(){
+		inner_controls.addProgram(new ModelGroup.Program(){
 
 			@Override
-			public void preRender(TurboList list, Entity ent, VehicleData data, Colorable color, String part, RenderCache cache){
-				if(ent == null) return;
-				list.get(0).rotationAngleZ = -27 + (data.getAttribute("lcc_h").integer_value() * 4.5f);
-				list.get(1).rotationAngleZ = -35 + (data.getAttribute("lcc_v").integer_value() * -7);
+			public void preRender(ModelGroup list, ModelRenderData data){
+				if(data.entity == null) return;
+				list.get(0).rotationAngleZ = -27 + (data.vehicle.getAttribute("lcc_h").integer_value() * 4.5f);
+				list.get(1).rotationAngleZ = -35 + (data.vehicle.getAttribute("lcc_v").integer_value() * -7);
 			}
 
 			@Override
-			public void postRender(TurboList list, Entity ent, VehicleData data, Colorable color, String part, RenderCache cache){
-				//
+			public boolean isPostRender(){
+				return false;
 			}
 			
 		});

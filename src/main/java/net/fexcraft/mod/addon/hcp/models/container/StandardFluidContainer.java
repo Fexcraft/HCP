@@ -5,7 +5,7 @@ import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
 import net.fexcraft.mod.fvtm.model.ContainerModel;
 import net.fexcraft.mod.fvtm.model.DefaultPrograms;
-import net.fexcraft.mod.fvtm.model.TurboList;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 
 /** This file was exported via the FVTM Exporter V1 of<br>
  *  FMT (Fex's Modelling Toolbox) v.1.0.4-test &copy; 2018 - Fexcraft.net<br>
@@ -18,7 +18,7 @@ public class StandardFluidContainer extends ContainerModel {
 		super(); textureX = 512; textureY = 512;
 		this.addToCreators("Ferdinand (FEX___96)");
 		//
-		TurboList chassis = new TurboList("chassis");
+		ModelGroup chassis = new ModelGroup("chassis");
 		chassis.add(new ModelRendererTurbo(chassis, 1, 57, textureX, textureY).addBox(0, 0, 0, 1, 42, 1)
 			.setRotationPoint(-47.8f, -45, -20).setRotationAngle(0, 0, 0).setName("Box 50")
 		);
@@ -144,7 +144,7 @@ public class StandardFluidContainer extends ContainerModel {
 		);
 		this.groups.add(chassis);
 		//
-		TurboList in_out = new TurboList("in_out");
+		ModelGroup in_out = new ModelGroup("in_out");
 		in_out.add(new ModelRendererTurbo(in_out, 1, 1, textureX, textureY).addBox(-2, 0, -2, 4, 48, 4)
 			.setRotationPoint(0, -48, 0).setRotationAngle(0, 0, 0).setName("Box 0")
 		);
@@ -162,7 +162,7 @@ public class StandardFluidContainer extends ContainerModel {
 		);
 		this.groups.add(in_out);
 		//
-		TurboList primary = new TurboList("primary");
+		ModelGroup primary = new ModelGroup("primary");
 		primary.add(new ModelRendererTurbo(primary, 1, 57, textureX, textureY).addBox(0, 0, 0, 90, 4, 44)
 			.setRotationPoint(-45, -26, -22).setRotationAngle(0, 0, 0).setName("Box 13")
 		);
@@ -292,7 +292,7 @@ public class StandardFluidContainer extends ContainerModel {
 		primary.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(primary);
 		//
-		TurboList secondary = new TurboList("secondary");
+		ModelGroup secondary = new ModelGroup("secondary");
 		secondary.add(new ModelRendererTurbo(secondary, 25, 1, textureX, textureY).addBox(0, 0, 0, 3, 3, 48)
 			.setRotationPoint(-48, -3, -24).setRotationAngle(0, 0, 0).setName("Box 1")
 		);

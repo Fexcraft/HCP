@@ -4,7 +4,7 @@ package net.fexcraft.mod.addon.hcp.models.parts;
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
 import net.fexcraft.mod.fvtm.model.PartModel;
-import net.fexcraft.mod.fvtm.model.TurboList;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 
 /** This file was exported via the FVTM Exporter V1.4 of<br>
  *  FMT (Fex's Modelling Toolbox) v.2.0.5 &copy; 2020 - Fexcraft.net<br>
@@ -17,7 +17,7 @@ public class LCCEngine extends PartModel {
 		super(); textureX = 1024; textureY = 1024;
 		this.addToCreators("Ferdinand (FEX___96)");
 		//
-		TurboList engine = new TurboList("engine");
+		ModelGroup engine = new ModelGroup("engine");
 		engine.add(new ModelRendererTurbo(engine, 588, 120, textureX, textureY).addBox(0.5f, 0, 0, 37, 16, 13)
 			.setRotationPoint(-51, -17, 171.5f).setRotationAngle(0, 0, 0)
 		);

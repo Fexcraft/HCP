@@ -3,11 +3,8 @@ package net.fexcraft.mod.addon.hcp.models.parts;
 
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
-import net.fexcraft.mod.fvtm.data.root.RenderCache;
-import net.fexcraft.mod.fvtm.data.vehicle.VehicleData;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 import net.fexcraft.mod.fvtm.model.PartModel;
-import net.fexcraft.mod.fvtm.model.TurboList;
-import net.minecraft.entity.Entity;
 
 /** This file was exported via the FVTM Exporter V1.4 of<br>
  *  FMT (Fex's Modelling Toolbox) v.2.0.5 &copy; 2020 - Fexcraft.net<br>
@@ -16,13 +13,13 @@ import net.minecraft.entity.Entity;
 @fModel(registryname = "hcp:models/part/lcc_wheels")
 public class LCCWheels extends PartModel {
 	
-	private TurboList wheels_right, wheels_left;
+	private ModelGroup wheels_right, wheels_left;
 
 	public LCCWheels(){
 		super(); textureX = 1024; textureY = 1024;
 		this.addToCreators("Ferdinand (FEX___96)");
 		//
-		wheels_right = new TurboList("wheels_right");
+		wheels_right = new ModelGroup("wheels_right");
 		wheels_right.add(new ModelRendererTurbo(wheels_right, 996, 170, textureX, textureY).addHollowCylinder(0, 0, 0, 5, 3, 2, 16, 0, 1, 1, 1, null)
 			.setRotationPoint(-64, 5, -173).setRotationAngle(0, 0, 0)
 		);
@@ -241,7 +238,7 @@ public class LCCWheels extends PartModel {
 		);
 		this.groups.add(wheels_right);
 		//
-		wheels_left = new TurboList("wheels_left");
+		wheels_left = new ModelGroup("wheels_left");
 		wheels_left.add(new ModelRendererTurbo(wheels_left, 0, 93, textureX, textureY).addHollowCylinder(0, 0, 0, 5, 3, 2, 16, 0, 1, 1, 1, null)
 			.setRotationPoint(-64, 5, 183).setRotationAngle(0, 0, 0)
 		);
@@ -464,16 +461,17 @@ public class LCCWheels extends PartModel {
 	}
 	
     @Override
-    public void render(VehicleData data, String us){
-        switch(us){
-            case "bogie_front":{ wheels_left.render(null, data, data, us, null); return; }
-            case "bogie_rear":{ wheels_right.render(null, data, data, us, null); return; }
+    public void render(ModelRenderData data){
+        switch(data.part_category){
+            case "bogie_front":{
+            	wheels_left.render(data);
+            	return;
+            }
+            case "bogie_rear":{
+            	wheels_right.render(data);
+            	return;
+            }
         }
-    }
-
-    @Override
-    public void render(VehicleData data, String us, Entity vehicle, RenderCache cache){
-        super.render(data, us);
     }
 
 }

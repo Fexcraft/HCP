@@ -5,7 +5,7 @@ import net.fexcraft.lib.common.Static;
 import net.fexcraft.lib.common.math.Vec3f;
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.mod.fvtm.model.RailGaugeModel;
-import net.fexcraft.mod.fvtm.model.TurboList;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 
 /** This file was exported via the FVTM Exporter V1.3 of<br>
  *  FMT (Fex's Modelling Toolbox) v.1.2.9 &copy; 2019 - Fexcraft.net<br>
@@ -24,7 +24,7 @@ public class LargeContainerCraneGauge extends RailGaugeModel {
 		Vec3f br = new Vec3f(0, -0.1f, 0), bl = new Vec3f(0, -0.1f, 0);
 		this.addRailRectShape(Static.sixteenth, -183, 2, 2, 2, tr, tl, bl, br, true);
 		this.addRailRectShape(Static.sixteenth, -175, 2, 2, 2, tr, tl, bl, br, true);
-		this.groups.add(new TurboList("ties"));
+		this.groups.add(new ModelGroup("ties"));
 	}
 
 }

@@ -3,13 +3,9 @@ package net.fexcraft.mod.addon.hcp.models.vehicle;
 
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
-import net.fexcraft.mod.fvtm.data.root.Colorable;
-import net.fexcraft.mod.fvtm.data.root.RenderCache;
-import net.fexcraft.mod.fvtm.data.vehicle.VehicleData;
 import net.fexcraft.mod.fvtm.model.DefaultPrograms;
-import net.fexcraft.mod.fvtm.model.TurboList;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 import net.fexcraft.mod.fvtm.model.VehicleModel;
-import net.minecraft.entity.Entity;
 
 /** This file was exported via the FVTM Exporter V1.4 of<br>
  *  FMT (Fex's Modelling Toolbox) v.2.0.5 &copy; 2020 - Fexcraft.net<br>
@@ -23,7 +19,7 @@ public class LargeContainerCrane extends VehicleModel {
 		this.addToCreators("Ferdinand (FEX___96)");
 		item_scale.setAll(.03125f);
 		//
-		TurboList chassis_right = new TurboList("chassis_right");
+		ModelGroup chassis_right = new ModelGroup("chassis_right");
 		chassis_right.add(new ModelRendererTurbo(chassis_right, 945, 324, textureX, textureY).addBox(0.5f, 0, 0, 29, 6, 6)
 			.setRotationPoint(17, -1, -177).setRotationAngle(0, 0, 0)
 		);
@@ -151,7 +147,7 @@ public class LargeContainerCrane extends VehicleModel {
 		chassis_right.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(chassis_right);
 		//
-		TurboList chassis_left = new TurboList("chassis_left");
+		ModelGroup chassis_left = new ModelGroup("chassis_left");
 		chassis_left.add(new ModelRendererTurbo(chassis_left, 675, 268, textureX, textureY).addBox(0.5f, 0, 0, 29, 6, 6)
 			.setRotationPoint(17, -1, 179).setRotationAngle(0, 0, 0)
 		);
@@ -275,7 +271,7 @@ public class LargeContainerCrane extends VehicleModel {
 		chassis_left.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(chassis_left);
 		//
-		TurboList top_front = new TurboList("top_front");
+		ModelGroup top_front = new ModelGroup("top_front");
 		top_front.add(new ModelRendererTurbo(top_front, 270, 287, textureX, textureY).addBox(0.5f, 0, 0, 43, 4, 30)
 			.setRotationPoint(42, -158, -198).setRotationAngle(0, 0, 0)
 		);
@@ -360,7 +356,7 @@ public class LargeContainerCrane extends VehicleModel {
 		top_front.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(top_front);
 		//
-		TurboList top_rear = new TurboList("top_rear");
+		ModelGroup top_rear = new ModelGroup("top_rear");
 		top_rear.add(new ModelRendererTurbo(top_rear, 876, 197, textureX, textureY).addBox(0.5f, 0, 0, 43, 4, 30)
 			.setRotationPoint(-86, -158, -198).setRotationAngle(0, 0, 0)
 		);
@@ -445,7 +441,7 @@ public class LargeContainerCrane extends VehicleModel {
 		top_rear.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(top_rear);
 		//
-		TurboList ladder = new TurboList("ladder");
+		ModelGroup ladder = new ModelGroup("ladder");
 		ladder.add(new ModelRendererTurbo(ladder, 688, 210, textureX, textureY)
 			.addShapeBox(0.5f, 0, 0, 2, 18, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 6, 0, 0, -6, 0, 0, -6)
 			.setRotationPoint(-8, -150, -172).setRotationAngle(0, 0, 0)
@@ -578,7 +574,7 @@ public class LargeContainerCrane extends VehicleModel {
 		);
 		this.groups.add(ladder);
 		//
-		TurboList wheel_chassis_left = new TurboList("wheel_chassis_left");
+		ModelGroup wheel_chassis_left = new ModelGroup("wheel_chassis_left");
 		wheel_chassis_left.add(new ModelRendererTurbo(wheel_chassis_left, 416, 387, textureX, textureY).addBox(0, 0, 0, 1, 8, 16)
 			.setRotationPoint(-47.5f, -1, 170).setRotationAngle(0, 0, 0)
 		);
@@ -633,7 +629,7 @@ public class LargeContainerCrane extends VehicleModel {
 		wheel_chassis_left.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(wheel_chassis_left);
 		//
-		TurboList wheel_chassis_right = new TurboList("wheel_chassis_right");
+		ModelGroup wheel_chassis_right = new ModelGroup("wheel_chassis_right");
 		wheel_chassis_right.add(new ModelRendererTurbo(wheel_chassis_right, 518, 332, textureX, textureY).addBox(0, 0, 0, 1, 8, 16)
 			.setRotationPoint(-47.5f, -1, -186).setRotationAngle(0, 0, 0)
 		);
@@ -687,7 +683,7 @@ public class LargeContainerCrane extends VehicleModel {
 		);
 		wheel_chassis_right.addProgram(DefaultPrograms.RGB_PRIMARY);
 		this.groups.add(wheel_chassis_right);
-		TurboList wheels_right = new TurboList("wheels_right");
+		ModelGroup wheels_right = new ModelGroup("wheels_right");
 		wheels_right.add(new ModelRendererTurbo(wheels_right, 996, 170, textureX, textureY).addHollowCylinder(0, 0, 0, 5, 3, 2, 16, 0, 1, 1, 1, null)
 			.setRotationPoint(-64, 5, -173).setRotationAngle(0, 0, 0)
 		);
@@ -906,7 +902,7 @@ public class LargeContainerCrane extends VehicleModel {
 		);
 		this.groups.add(wheels_right);
 		//
-		TurboList wheels_left = new TurboList("wheels_left");
+		ModelGroup wheels_left = new ModelGroup("wheels_left");
 		wheels_left.add(new ModelRendererTurbo(wheels_left, 0, 93, textureX, textureY).addHollowCylinder(0, 0, 0, 5, 3, 2, 16, 0, 1, 1, 1, null)
 			.setRotationPoint(-64, 5, 183).setRotationAngle(0, 0, 0)
 		);
@@ -1125,7 +1121,7 @@ public class LargeContainerCrane extends VehicleModel {
 		);
 		this.groups.add(wheels_left);
 		//
-		TurboList outer_controls = new TurboList("outer_controls");
+		ModelGroup outer_controls = new ModelGroup("outer_controls");
 		outer_controls.add(new ModelRendererTurbo(outer_controls, 379, 38, textureX, textureY).addBox(0, 0, 0, 1, 1, 1)
 			.setRotationPoint(-44, -4.5f, -184.25f).setRotationAngle(0, 0, 0)
 		);
@@ -1144,18 +1140,18 @@ public class LargeContainerCrane extends VehicleModel {
 		outer_controls.add(new ModelRendererTurbo(outer_controls, 516, 14, textureX, textureY).addBox(0, 0, 0, 1, 1, 1)
 			.setRotationPoint(-34, -2.75f, -184.25f).setRotationAngle(0, 0, 0)
 		);
-		outer_controls.addProgram(new TurboList.Program(){
+		outer_controls.addProgram(new ModelGroup.Program(){
 
 			@Override
-			public void preRender(TurboList list, Entity ent, VehicleData data, Colorable color, String part, RenderCache cache){
-				if(ent == null) return;
-				list.get(2).rotationAngleX = (data.getAttribute("lcc_h").integer_value() + 9) * 2.25f;
-				list.get(3).rotationAngleX = data.getAttribute("lcc_v").integer_value() * -6;
+			public void preRender(ModelGroup list, ModelRenderData data){
+				if(data.entity == null) return;
+				list.get(2).rotationAngleX = (data.vehicle.getAttribute("lcc_h").integer_value() + 9) * 2.25f;
+				list.get(3).rotationAngleX = data.vehicle.getAttribute("lcc_v").integer_value() * -6;
 			}
 
 			@Override
-			public void postRender(TurboList list, Entity ent, VehicleData data, Colorable color, String part, RenderCache cache){
-				//
+			public boolean isPostRender(){
+				return false;
 			}
 			
 		});

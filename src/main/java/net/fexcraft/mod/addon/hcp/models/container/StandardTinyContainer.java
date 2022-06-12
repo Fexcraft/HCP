@@ -5,7 +5,7 @@ import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.lib.tmt.ModelRendererTurbo;
 import net.fexcraft.mod.fvtm.model.ContainerModel;
 import net.fexcraft.mod.fvtm.model.DefaultPrograms;
-import net.fexcraft.mod.fvtm.model.TurboList;
+import net.fexcraft.mod.fvtm.model.ModelGroup;
 
 /** This file was exported via the FVTM Exporter V1 of<br>
  *  FMT (Fex's Modelling Toolbox) v.1.0.6-test &copy; 2019 - Fexcraft.net<br>
@@ -18,7 +18,7 @@ public class StandardTinyContainer extends ContainerModel {
 		super(); textureX = 512; textureY = 256;
 		this.addToCreators("Ferdinand (FEX___96)");
 		//
-		TurboList metal = new TurboList("metal");
+		ModelGroup metal = new ModelGroup("metal");
 		metal.add(new ModelRendererTurbo(metal, 433, 8, textureX, textureY)
 			.addShapeBox(-2, -1.5f, -18, 1, 1, 1, 0, -0.4f, 0, 0, 0, 0, 0.5f, 0, 0, 0.5f, -0.4f, 0, 0, -0.4f, 0, 0, 0, 0, 0.5f, 0, 0, 0.5f, -0.4f, 0, 0)
 			.setRotationPoint(-15, -46, 21).setRotationAngle(0, 0, 0).setName("Box 92")
@@ -149,7 +149,7 @@ public class StandardTinyContainer extends ContainerModel {
 		);
 		this.groups.add(metal);
 		
-		TurboList primary = new TurboList("primary");
+		ModelGroup primary = new ModelGroup("primary");
 		primary.add(new ModelRendererTurbo(primary, 387, 53, textureX, textureY).addBox(0, 0, 0, 2, 3, 48)
 			.setRotationPoint(-16, -3, -24).setRotationAngle(0, 0, 0).setName("Box 0")
 		);
