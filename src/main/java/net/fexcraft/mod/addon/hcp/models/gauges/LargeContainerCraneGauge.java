@@ -2,6 +2,7 @@
 package net.fexcraft.mod.addon.hcp.models.gauges;
 
 import net.fexcraft.lib.common.Static;
+import net.fexcraft.lib.common.math.V3D;
 import net.fexcraft.lib.common.math.Vec3f;
 import net.fexcraft.lib.mc.api.registry.fModel;
 import net.fexcraft.mod.fvtm.model.RailGaugeModel;
@@ -20,8 +21,8 @@ public class LargeContainerCraneGauge extends RailGaugeModel {
 		//
 		this.ties_distance = 0.5f;
 		this.buffer_length = 0.2f;
-		Vec3f tr = new Vec3f(-0.5f, 0, 0), tl = new Vec3f(0.5f, 0, 0);
-		Vec3f br = new Vec3f(0, -0.1f, 0), bl = new Vec3f(0, -0.1f, 0);
+		V3D tr = new V3D(-0.5f, 0, 0), tl = new V3D(0.5f, 0, 0);
+		V3D br = new V3D(0, -0.1f, 0), bl = new V3D(0, -0.1f, 0);
 		this.addRailRectShape(Static.sixteenth, -183, 2, 2, 2, tr, tl, bl, br, true);
 		this.addRailRectShape(Static.sixteenth, -175, 2, 2, 2, tr, tl, bl, br, true);
 		this.groups.add(new ModelGroup("ties"));
