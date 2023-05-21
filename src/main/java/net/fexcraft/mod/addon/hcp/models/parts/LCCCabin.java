@@ -392,7 +392,7 @@ public class LCCCabin extends PartModel {
 			.addShapeBox(0.5f, 0, 0, 19, 8, 1, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 			.setRotationPoint(-34, -179, -23.5f).setRotationAngle(0, 0, 0)
 		);
-		cart_windows.addProgram(new DefaultPrograms.Window(0xbbeded));
+		cart_windows.addProgram(new DefaultPrograms.Window());
 		//this.groups.add(cart_windows);
 		//
 		ModelGroup inner_controls = new ModelGroup("inner_controls");
